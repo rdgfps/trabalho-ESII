@@ -53,7 +53,19 @@ function acelerar(veiculo: Veiculo): void {
         return;
     }
 
-    veiculo.velocidade += veiculo.potencia * 0.1;
+    const fatorMarcha = (veiculo.numeroMarchas - veiculo.marchaAtual + 1) / veiculo.numeroMarchas;
+
+    const incremento = veiculo.potencia * 0.05 * fatorMarcha;
+
+    veiculo.velocidade += incremento;
+
+    const velocidadeMax = veiculo.potencia * 2;
+    if (veiculo.velocidade > velocidadeMax) {
+        veiculo.velocidade = velocidadeMax;
+        console.log("Velocidade máxima atingida!");
+    }
+
+    console.log(`Acelerando na marcha ${veiculo.marchaAtual}...`);
     console.log("Velocidade atual:", veiculo.velocidade.toFixed(2));
 }
 
