@@ -63,15 +63,22 @@ function frear(veiculo: Veiculo): void {
         return;
     }
 
-    veiculo.velocidade -= veiculo.potencia * 0.1;
+    
+    let intensidade = veiculo.velocidade * 0.2;
 
+    
+    intensidade += veiculo.marchaAtual * 2;
+
+    veiculo.velocidade -= intensidade;
+
+    
     if (veiculo.velocidade < 0) {
         veiculo.velocidade = 0;
     }
 
+    console.log(`Freando... (-${intensidade.toFixed(2)})`);
     console.log("Velocidade atual:", veiculo.velocidade.toFixed(2));
 }
-
 function subirMarcha(veiculo: Veiculo): void {
     if (veiculo.marchaAtual < veiculo.numeroMarchas) {
         veiculo.marchaAtual++;
