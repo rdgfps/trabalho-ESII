@@ -21,7 +21,8 @@ Este projeto foi desenvolvido com o objetivo de praticar conceitos de Programaç
 
 ##  Estrutura do Projeto
 
-```bash npx ts-node index.ts
+```bash 
+npx ts-node index.ts
 
 📁 src
  ├── Veiculo.ts   # Classe principal
